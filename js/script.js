@@ -11,9 +11,8 @@ const verEmail = document.getElementById('btn-check');
 let verify = false;
 
 // Evento click per contollo email
-verEmail.addEventListener('click', function(){
+verEmail.addEventListener('click', function () {
 
-    console.log(emailUser.value);
 
     for (let index = 0; index < elencoMail.length; index++) {
 
@@ -24,21 +23,16 @@ verEmail.addEventListener('click', function(){
 
     if (verify == true) {
         console.log('Puoi entrare');
-        checkUser.innerHTML = ('Puoi entrare');
+        checkUser.innerHTML = ('Puoi entrare' + ' ' + '<i class="fa-solid fa-lock-open"></i>');
         checkUser.classList.add('text-success')
         checkUser.classList.remove('text-danger')
-        
+
     } else {
         console.log('Accesso negato l\'email non è presente');
-        checkUser.innerHTML = ('Accesso negato l\'email non è presente');
+        checkUser.innerHTML = ('Accesso negato' + ' ' + '<i class="fa-solid fa-lock"></i>');
         checkUser.classList.add('text-danger')
         checkUser.classList.remove('text-success')
-
-
     }
-
-    
-    
 });
 
 
@@ -48,18 +42,45 @@ verEmail.addEventListener('click', function(){
 
 // Gioco dei dadi 
 
-const userRandom = Math.floor((Math.random() * 6) + 1);
-const pcRandom = Math.floor((Math.random() * 6) + 1);
 
-console.log('User' + ' ' + userRandom);
-console.log('Pc' + ' ' + pcRandom);
 
-if (userRandom == pcRandom) {
-    console.log('Pareggio');
-}
-else if (userRandom < pcRandom){
-    console.log('Pc ha vinto');
-}
-else {
-    console.log('User hai vinto');
-}
+const userRandomDOM = document.getElementById('user-number');
+const pcRandomDOM = document.getElementById('pc-number');
+const resultCalc = document.getElementById('result');
+const btnGenera = document.getElementById('btn-gen');
+
+
+
+btnGenera.addEventListener('click', function () {
+
+    for (let index = 0; index < 1; index++) {
+
+        const userRandom = Math.floor((Math.random() * 6) + 1);
+        const pcRandom = Math.floor((Math.random() * 6) + 1);
+
+        userRandomDOM.innerHTML = userRandom;
+        pcRandomDOM.innerHTML = pcRandom;
+
+        console.log('User' + ' ' + userRandom);
+        console.log('Pc' + ' ' + pcRandom);
+
+        if (userRandom == pcRandom) {
+            console.log('Pareggio');
+            resultCalc.innerHTML = 'PAREGGIO';
+        }
+        else if (userRandom < pcRandom) {
+            console.log('Pc ha vinto');
+            resultCalc.innerHTML = 'PC WINNER!';
+        }
+        else {
+            console.log('User hai vinto');
+            resultCalc.innerHTML = 'USER WINNER!';
+        }
+
+    }
+
+
+
+})
+
+

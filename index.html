@@ -22,18 +22,46 @@
 
 <body>
     <div class="container">
-        <span>Scrivi la tua email</span>
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">@</span>
-            <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+        <div class="text-center mt-3">
+            <h1><i class="fa-solid fa-user-astronaut"></i></h1>
+        </div>
+        <div class="input-group mb-3 mt-3">
+            <input type="text" class="form-control" placeholder="email" aria-label="Username"
                 aria-describedby="basic-addon1" id="email">
         </div>
-        <button id="btn-check" type="button" class="btn btn-primary">Accedi</button>
+        <div class="text-center">
+            <button id="btn-check" type="button" class="btn btn-primary">Accedi</button>
+        </div>
         
         <div class="m-3 text-center">
-            <h3 id="check-user"></h3>
+            <h3 id="check-user"><i class="fa-solid fa-lock"></i></h3>
         </div>
 
+    </div>
+
+    <div class="container py-5">
+        <div class="text-center">
+            <h1>Gioco dei dadi</h1>
+            <h1><i class="fa-solid fa-dice"></i></h1>
+            <button id="btn-gen" type="button" class="btn btn-primary">Genera</button>
+        </div>
+
+        <div class="row text-center">
+            <div class="col-6">
+                <h1>Utente</h1>
+                <h1 id="user-number"></h1>
+
+            </div>
+
+            <div class="col-6">
+                <h1>PC</h1>
+                <h1 id="pc-number"></h1>
+                
+            </div>
+            <div class="col-12">
+                <h1 id="result"></h1>
+            </div>
+        </div>
     </div>
 
 
