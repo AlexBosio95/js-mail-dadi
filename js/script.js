@@ -8,11 +8,8 @@ for (let index = 0; index < elencoMail.length; index++) {
     
     if (emailUser == elencoMail[index]){
         verify = true;
-    } else{
-    }
+    } 
 }
-
-console.log(verify);
 
 if (verify == true){
     console.log('Puoi entrare')
