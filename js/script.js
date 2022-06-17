@@ -1,7 +1,7 @@
 // Array con elenco email
 const elencoMail = ['pippo@gmail.com', 'pluto@gmail.com', 'giacomo@gmail.com', 'pino@gmail.com', 'umberto@gmail.com', 'peppino@gmail.com', 'sara@gmail.com', 'linda@gmail.com', 'francesca@gmail.com', 'serena@gmail.com', 'monica@gmail.com', 'alessandro@gmail.com', 'luca@gmail.com', 'rebecca@gmail.com', 'dino@gmail.com'];
 // variabile dove viene scritta l'email
-const emailUser = document.getElementById('basic-addon1');
+const emailUser = document.getElementById('email');
 // Variabile dove scrivo il risultato di accesso
 const checkUser = document.getElementById('check-user');
 // Variabile bottone di controllo
@@ -13,6 +13,8 @@ let verify = false;
 // Evento click per contollo email
 verEmail.addEventListener('click', function(){
 
+    console.log(emailUser.value);
+
     for (let index = 0; index < elencoMail.length; index++) {
 
         if (emailUser.value == elencoMail[index]) {
@@ -23,13 +25,19 @@ verEmail.addEventListener('click', function(){
     if (verify == true) {
         console.log('Puoi entrare');
         checkUser.innerHTML = ('Puoi entrare');
+        checkUser.classList.add('text-success')
+        checkUser.classList.remove('text-danger')
         
     } else {
         console.log('Accesso negato l\'email non è presente');
         checkUser.innerHTML = ('Accesso negato l\'email non è presente');
+        checkUser.classList.add('text-danger')
+        checkUser.classList.remove('text-success')
+
+
     }
 
-    console.log(emailUser.value);
+    
     
 });
 
