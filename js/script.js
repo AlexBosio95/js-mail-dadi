@@ -5,14 +5,33 @@ const emailUser = prompt('Inserisci la tua email');
 let verify = false;
 
 for (let index = 0; index < elencoMail.length; index++) {
-    
-    if (emailUser == elencoMail[index]){
+
+    if (emailUser == elencoMail[index]) {
         verify = true;
-    } 
+    }
 }
 
-if (verify == true){
+if (verify == true) {
     console.log('Puoi entrare')
 } else {
     console.log('Accesso negato l\'email non è presente')
+}
+
+
+// Gioco dei dadi 
+
+const userRandom = Math.floor(Math.random() * 6);
+const pcRandom = Math.floor(Math.random() * 6);
+
+console.log('User' + ' ' + userRandom);
+console.log('Pc' + ' ' + pcRandom);
+
+if (userRandom == pcRandom) {
+    console.log('Pareggio');
+}
+else if (userRandom < pcRandom){
+    console.log('Pc ha vinto');
+}
+else {
+    console.log('User hai vinto');
 }
